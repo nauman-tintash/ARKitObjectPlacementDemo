@@ -13,6 +13,8 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var sessionInfoView: UIView!
+    @IBOutlet weak var sessionInfoLabel: UILabel!
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
