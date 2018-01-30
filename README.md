@@ -33,3 +33,8 @@ iOS 11 or later
 
 ARKit requires an iOS device with an A9 or later processor.
 
+## References
+
+* [ARKit Framework](https://developer.apple.com/documentation/arkit)
+* [Building Your First AR Experience](https://developer.apple.com/documentation/arkit/building_your_first_ar_experience)
+* [Interactive Content with ARKit](https://developer.apple.com/library/content/samplecode/InteractiveContent/Introduction/Intro.html)
