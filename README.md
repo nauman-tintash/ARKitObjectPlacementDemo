@@ -1,11 +1,9 @@
 # Placing 3D objects in ARKit
 
+## What this sample demonstrates
 This sample demonstrates using SceneKit and ARKit to place 3D models in an augmented reality environment.
 
 It uses ARKit to detect a horizontal plane and then based on user input, it places a 3D model in the environment.
-
-
-## What this sample demonstrates
 
 ## Implementation Details
 
