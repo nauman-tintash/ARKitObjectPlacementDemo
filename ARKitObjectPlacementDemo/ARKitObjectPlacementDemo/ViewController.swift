@@ -21,6 +21,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set the view's delegate
+        sceneView.delegate = self
+        
         // Set a delegate to track the number of plane anchors for providing UI feedback.
         sceneView.session.delegate = self
         
