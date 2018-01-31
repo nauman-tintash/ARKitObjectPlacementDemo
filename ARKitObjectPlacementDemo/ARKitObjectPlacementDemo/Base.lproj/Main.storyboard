@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uL-6Y-HNV">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </arscnView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-ci-KvW" userLabel="Session Info View">
                                 <rect key="frame" x="16" y="730" width="191" height="48"/>
@@ -59,9 +59,9 @@
                             <constraint firstItem="6uL-6Y-HNV" firstAttribute="trailing" secondItem="oTl-l6-5nM" secondAttribute="trailing" id="TPS-nV-ObW"/>
                             <constraint firstItem="6uL-6Y-HNV" firstAttribute="leading" secondItem="oTl-l6-5nM" secondAttribute="leading" id="efU-GJ-F24"/>
                             <constraint firstItem="Y8W-ci-KvW" firstAttribute="top" secondItem="oTl-l6-5nM" secondAttribute="top" constant="686" id="qN2-0c-Jxh"/>
-                            <constraint firstItem="6uL-6Y-HNV" firstAttribute="top" secondItem="oTl-l6-5nM" secondAttribute="top" id="rtj-3Y-CYb"/>
+                            <constraint firstItem="6uL-6Y-HNV" firstAttribute="top" secondItem="oTl-l6-5nM" secondAttribute="top" constant="-44" id="rtj-3Y-CYb"/>
                             <constraint firstItem="oTl-l6-5nM" firstAttribute="trailing" secondItem="Y8W-ci-KvW" secondAttribute="trailing" constant="168" id="wns-KV-Iy6"/>
-                            <constraint firstItem="6uL-6Y-HNV" firstAttribute="bottom" secondItem="oTl-l6-5nM" secondAttribute="bottom" id="xmB-bL-l33"/>
+                            <constraint firstItem="6uL-6Y-HNV" firstAttribute="bottom" secondItem="oTl-l6-5nM" secondAttribute="bottom" constant="34" id="xmB-bL-l33"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oTl-l6-5nM"/>
                     </view>
@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="102.99850074962519"/>
+            <point key="canvasLocation" x="136.80000000000001" y="102.70935960591133"/>
         </scene>
     </scenes>
 </document>
