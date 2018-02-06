@@ -30,11 +30,19 @@ Add IBOutlets for ARSCNScene, Session Info View and the label for session info.
 - Implement the ObjectModelScene inherited from SCNScene as implemented in the demo.
 - Modify the `loadModel` function and `setupShader()` functions to implement the respective features for your specific model.
 
-### Placing the object on a horizontal plane
+### Place the object on a horizontal plane
 - Add the tap and pan gestures to the storyboard.
 - Implement the `didPan` and `didTap` gestures in the UIViewController and set those as outlets for IBActions for didPan and didTap.
 - Use the impementation of `didPan` and `didTap` from this demo to control the positioning of the model on horizontal surfaces.
 
+### `loadModel` Funtion
+We'll use this function to implement all our code related to loading of our model into the scene.
+
+### Add the sample assets in the project
+Create an Assets folder and place all the assets you need to load into that folder including the obj file as well as the materials and textures.
+
+### Implement the ObjectModelNode class
+Implement the ObjectModelNode class to handle the loading of models and textures for a model.
 
 ## Useful Resources
 
