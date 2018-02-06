@@ -14,6 +14,11 @@
 		41789EC120208C1600F019E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41789EC020208C1600F019E1 /* Assets.xcassets */; };
 		41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41789EC220208C1600F019E1 /* LaunchScreen.storyboard */; };
 		41933AB520233F0400EEE6AF /* ObjectModelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB420233F0400EEE6AF /* ObjectModelScene.swift */; };
+		41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */; };
+		41933AC72029E45A00EEE6AF /* default-wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41933AC32029E45A00EEE6AF /* default-wood.jpg */; };
+		41933AC82029E45A00EEE6AF /* table.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 41933AC42029E45A00EEE6AF /* table.mtl */; };
+		41933AC92029E45A00EEE6AF /* table.obj in Resources */ = {isa = PBXBuildFile; fileRef = 41933AC52029E45A00EEE6AF /* table.obj */; };
+		41933ACA2029E45A00EEE6AF /* modelinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 41933AC62029E45A00EEE6AF /* modelinfo.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		41789EC320208C1600F019E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41789EC520208C1600F019E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41933AB420233F0400EEE6AF /* ObjectModelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelScene.swift; sourceTree = "<group>"; };
+		41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelNode.swift; sourceTree = "<group>"; };
+		41933AC32029E45A00EEE6AF /* default-wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default-wood.jpg"; sourceTree = "<group>"; };
+		41933AC42029E45A00EEE6AF /* table.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = table.mtl; sourceTree = "<group>"; };
+		41933AC52029E45A00EEE6AF /* table.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = table.obj; sourceTree = "<group>"; };
+		41933AC62029E45A00EEE6AF /* modelinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modelinfo.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 		41789EB620208C1600F019E1 /* ARKitObjectPlacementDemo */ = {
 			isa = PBXGroup;
 			children = (
+				41933AC12029E44500EEE6AF /* Assets */,
 				41789EB720208C1600F019E1 /* AppDelegate.swift */,
 				41789EB920208C1600F019E1 /* art.scnassets */,
 				41789EBB20208C1600F019E1 /* ViewController.swift */,
@@ -66,8 +77,28 @@
 				41789EC220208C1600F019E1 /* LaunchScreen.storyboard */,
 				41789EC520208C1600F019E1 /* Info.plist */,
 				41933AB420233F0400EEE6AF /* ObjectModelScene.swift */,
+				41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */,
 			);
 			path = ARKitObjectPlacementDemo;
+			sourceTree = "<group>";
+		};
+		41933AC12029E44500EEE6AF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				41933AC22029E45A00EEE6AF /* table */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		41933AC22029E45A00EEE6AF /* table */ = {
+			isa = PBXGroup;
+			children = (
+				41933AC32029E45A00EEE6AF /* default-wood.jpg */,
+				41933AC42029E45A00EEE6AF /* table.mtl */,
+				41933AC52029E45A00EEE6AF /* table.obj */,
+				41933AC62029E45A00EEE6AF /* modelinfo.json */,
+			);
+			path = table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +161,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				41789EBA20208C1600F019E1 /* art.scnassets in Resources */,
+				41933AC82029E45A00EEE6AF /* table.mtl in Resources */,
+				41933AC92029E45A00EEE6AF /* table.obj in Resources */,
+				41933ACA2029E45A00EEE6AF /* modelinfo.json in Resources */,
+				41933AC72029E45A00EEE6AF /* default-wood.jpg in Resources */,
 				41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */,
 				41789EC120208C1600F019E1 /* Assets.xcassets in Resources */,
 				41789EBF20208C1600F019E1 /* Main.storyboard in Resources */,
@@ -145,6 +180,7 @@
 			files = (
 				41933AB520233F0400EEE6AF /* ObjectModelScene.swift in Sources */,
 				41789EBC20208C1600F019E1 /* ViewController.swift in Sources */,
+				41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */,
 				41789EB820208C1600F019E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
