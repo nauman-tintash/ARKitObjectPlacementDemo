@@ -20,6 +20,11 @@
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uL-6Y-HNV">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cep-NM-XgC" appends="YES" id="MUb-ud-d24"/>
+                                    <outletCollection property="gestureRecognizers" destination="GTX-zm-gx2" appends="YES" id="5lr-0g-pRq"/>
+                                </connections>
                             </arscnView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-ci-KvW" userLabel="Session Info View">
                                 <rect key="frame" x="16" y="730" width="191" height="48"/>
@@ -72,6 +77,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cep-NM-XgC">
+                    <connections>
+                        <action selector="didTap:" destination="BV1-FR-VrT" id="He0-LF-nd3"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="GTX-zm-gx2">
+                    <connections>
+                        <action selector="didPan:" destination="BV1-FR-VrT" id="3Xd-D9-18f"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="102.70935960591133"/>
         </scene>

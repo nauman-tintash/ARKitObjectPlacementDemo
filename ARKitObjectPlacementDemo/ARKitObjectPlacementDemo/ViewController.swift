@@ -17,6 +17,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBOutlet weak var sessionInfoView: UIView!
     @IBOutlet weak var sessionInfoLabel: UILabel!
     
+    var objectModelScene: ObjectModelScene!
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,14 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
+        
+        // Create a new scene
+//        shipScene = SCNScene(named: "art.scnassets/ship.scn")!
+        
+        objectModelScene = ObjectModelScene()
+        
+        // Set the scene to the view
+        sceneView.scene = objectModelScene
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -131,6 +141,38 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         sessionInfoLabel.text = "Session interruption ended"
         startNewSession()
+    }
+    
+    // MARK: - Gesture Recognizers
+    
+    @IBAction func didTap(_ recognizer: UITapGestureRecognizer) {
+        let location = recognizer.location(in: sceneView)
+        
+        // When tapped on a plane, reposition the content
+        let arHitTestResult = sceneView.hitTest(location, types: .existingPlane)
+        if !arHitTestResult.isEmpty {
+            let hit = arHitTestResult.first!
+            
+//            // Create a new scene
+//            shipScene = SCNScene(named: "art.scnassets/ship.scn")!
+//
+//            // Set the scene to the view
+//            sceneView.scene = shipScene
+            
+            objectModelScene.show()
+            objectModelScene.setTransform(hit.worldTransform)
+        }
+    }
+    
+    @IBAction func didPan(_ recognizer: UIPanGestureRecognizer) {
+        let location = recognizer.location(in: sceneView)
+        
+        // Drag the object on an infinite plane
+        let arHitTestResult = sceneView.hitTest(location, types: .existingPlane)
+        if !arHitTestResult.isEmpty {
+            let hit = arHitTestResult.first!
+            objectModelScene.setTransform(hit.worldTransform)
+        }
     }
     
     // MARK: - Private Functions.
