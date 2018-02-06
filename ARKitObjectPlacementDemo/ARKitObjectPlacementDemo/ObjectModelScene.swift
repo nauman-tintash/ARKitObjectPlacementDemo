@@ -35,12 +35,8 @@ class ObjectModelScene: SCNScene {
     }
     
     private func loadModel() {
-        let virtualObjectScene = SCNScene(named: "art.scnassets/ship.scn")!
+        let wrapperNode = ObjectModelNode()
         
-        let wrapperNode = SCNNode()
-        for child in virtualObjectScene.rootNode.childNodes {
-            wrapperNode.addChildNode(child)
-        }
         self.rootNode.addChildNode(contentRootNode)
         contentRootNode.addChildNode(wrapperNode)
         
