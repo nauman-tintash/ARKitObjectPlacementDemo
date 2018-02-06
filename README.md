@@ -26,7 +26,14 @@ Add IBOutlets for ARSCNScene, Session Info View and the label for session info.
 - Implement the `startNewSession` as private function as implemented in this demo.
 - Implement the functions to implement ARSCNViewDelegate and ARSessionDelegate as implemented in this demo.
 
+### Create a scene class to control the model
+- Implement the ObjectModelScene inherited from SCNScene as implemented in the demo.
+- Modify the `loadModel` function and `setupShader()` functions to implement the respective features for your specific model.
+
 ### Placing the object on a horizontal plane
+- Add the tap and pan gestures to the storyboard.
+- Implement the `didPan` and `didTap` gestures in the UIViewController and set those as outlets for IBActions for didPan and didTap.
+- Use the impementation of `didPan` and `didTap` from this demo to control the positioning of the model on horizontal surfaces.
 
 
 ## Useful Resources
