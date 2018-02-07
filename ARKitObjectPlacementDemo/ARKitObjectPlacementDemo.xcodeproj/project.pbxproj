@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		414D62AC202ADC510058F60B /* CenterTable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 414D62A8202ADC510058F60B /* CenterTable.jpg */; };
+		414D62AD202ADC510058F60B /* CenterTable.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 414D62A9202ADC510058F60B /* CenterTable.mtl */; };
+		414D62AE202ADC510058F60B /* CenterTable.obj in Resources */ = {isa = PBXBuildFile; fileRef = 414D62AA202ADC510058F60B /* CenterTable.obj */; };
+		414D62AF202ADC510058F60B /* modelinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 414D62AB202ADC510058F60B /* modelinfo.json */; };
 		41789EB820208C1600F019E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41789EB720208C1600F019E1 /* AppDelegate.swift */; };
 		41789EBA20208C1600F019E1 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 41789EB920208C1600F019E1 /* art.scnassets */; };
 		41789EBC20208C1600F019E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41789EBB20208C1600F019E1 /* ViewController.swift */; };
@@ -15,13 +19,13 @@
 		41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41789EC220208C1600F019E1 /* LaunchScreen.storyboard */; };
 		41933AB520233F0400EEE6AF /* ObjectModelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB420233F0400EEE6AF /* ObjectModelScene.swift */; };
 		41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */; };
-		41933AC72029E45A00EEE6AF /* default-wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41933AC32029E45A00EEE6AF /* default-wood.jpg */; };
-		41933AC82029E45A00EEE6AF /* table.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 41933AC42029E45A00EEE6AF /* table.mtl */; };
-		41933AC92029E45A00EEE6AF /* table.obj in Resources */ = {isa = PBXBuildFile; fileRef = 41933AC52029E45A00EEE6AF /* table.obj */; };
-		41933ACA2029E45A00EEE6AF /* modelinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 41933AC62029E45A00EEE6AF /* modelinfo.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		414D62A8202ADC510058F60B /* CenterTable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CenterTable.jpg; sourceTree = "<group>"; };
+		414D62A9202ADC510058F60B /* CenterTable.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CenterTable.mtl; sourceTree = "<group>"; };
+		414D62AA202ADC510058F60B /* CenterTable.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CenterTable.obj; sourceTree = "<group>"; };
+		414D62AB202ADC510058F60B /* modelinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modelinfo.json; sourceTree = "<group>"; };
 		41789EB420208C1600F019E1 /* ARKitObjectPlacementDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitObjectPlacementDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41789EB720208C1600F019E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41789EB920208C1600F019E1 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -32,10 +36,6 @@
 		41789EC520208C1600F019E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41933AB420233F0400EEE6AF /* ObjectModelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelScene.swift; sourceTree = "<group>"; };
 		41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelNode.swift; sourceTree = "<group>"; };
-		41933AC32029E45A00EEE6AF /* default-wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default-wood.jpg"; sourceTree = "<group>"; };
-		41933AC42029E45A00EEE6AF /* table.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = table.mtl; sourceTree = "<group>"; };
-		41933AC52029E45A00EEE6AF /* table.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = table.obj; sourceTree = "<group>"; };
-		41933AC62029E45A00EEE6AF /* modelinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modelinfo.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +49,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		414D62A7202ADC510058F60B /* CenterTable */ = {
+			isa = PBXGroup;
+			children = (
+				414D62A8202ADC510058F60B /* CenterTable.jpg */,
+				414D62A9202ADC510058F60B /* CenterTable.mtl */,
+				414D62AA202ADC510058F60B /* CenterTable.obj */,
+				414D62AB202ADC510058F60B /* modelinfo.json */,
+			);
+			path = CenterTable;
+			sourceTree = "<group>";
+		};
 		41789EAB20208C1600F019E1 = {
 			isa = PBXGroup;
 			children = (
@@ -85,20 +96,9 @@
 		41933AC12029E44500EEE6AF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				41933AC22029E45A00EEE6AF /* table */,
+				414D62A7202ADC510058F60B /* CenterTable */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		41933AC22029E45A00EEE6AF /* table */ = {
-			isa = PBXGroup;
-			children = (
-				41933AC32029E45A00EEE6AF /* default-wood.jpg */,
-				41933AC42029E45A00EEE6AF /* table.mtl */,
-				41933AC52029E45A00EEE6AF /* table.obj */,
-				41933AC62029E45A00EEE6AF /* modelinfo.json */,
-			);
-			path = table;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,13 +161,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				41789EBA20208C1600F019E1 /* art.scnassets in Resources */,
-				41933AC82029E45A00EEE6AF /* table.mtl in Resources */,
-				41933AC92029E45A00EEE6AF /* table.obj in Resources */,
-				41933ACA2029E45A00EEE6AF /* modelinfo.json in Resources */,
-				41933AC72029E45A00EEE6AF /* default-wood.jpg in Resources */,
+				414D62AF202ADC510058F60B /* modelinfo.json in Resources */,
 				41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */,
+				414D62AC202ADC510058F60B /* CenterTable.jpg in Resources */,
+				414D62AE202ADC510058F60B /* CenterTable.obj in Resources */,
 				41789EC120208C1600F019E1 /* Assets.xcassets in Resources */,
 				41789EBF20208C1600F019E1 /* Main.storyboard in Resources */,
+				414D62AD202ADC510058F60B /* CenterTable.mtl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,8 +24,8 @@ newmtl std_02___Default
 	Kd 1.0000 1.0000 1.0000
 	Ks 0.0000 0.0000 0.0000
 	Ke 0.0000 0.0000 0.0000
-	map_Ka 02 - Default1.jpg
-	map_Kd 02 - Default1.jpg
+	map_Ka CenterTable.jpg
+	map_Kd CenterTable.jpg
 
 newmtl std_03___Default
 	Ns 10.0000

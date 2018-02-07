@@ -17,7 +17,7 @@ class ObjectModelNode: SCNNode {
         super.init()
         
         //Load .obj
-        guard let url = Bundle.main.url(forResource: "table", withExtension: "obj") else {
+        guard let url = Bundle.main.url(forResource: "CenterTable", withExtension: "obj") else {
             fatalError("Failed to find model file.")
         }
 
@@ -27,18 +27,18 @@ class ObjectModelNode: SCNNode {
         }
         
         //Texture
-        let scatteringFunction = MDLPhysicallyPlausibleScatteringFunction()
+//        let scatteringFunction = MDLPhysicallyPlausibleScatteringFunction()
         
-        let material = MDLMaterial(name: "baseMaterial", scatteringFunction: scatteringFunction)
+//        let material = MDLMaterial(name: "baseMaterial", scatteringFunction: scatteringFunction)
         
-        material.setTextureProperties(textures: [ //MDLMaterialSemantic key.value array
-            .baseColor:"default-wood.jpg"])
+//        material.setTextureProperties(textures: [ //MDLMaterialSemantic key.value array
+//            .baseColor:"default-wood.jpg"])
         
-        for  submesh in object.submeshes!  {
-            if let submesh = submesh as? MDLSubmesh {
-                submesh.material = material
-            }
-        }
+//        for  submesh in object.submeshes!  {
+//            if let submesh = submesh as? MDLSubmesh {
+//                submesh.material = material
+//            }
+//        }
         
         let node = SCNNode(mdlObject: object)
         node.name = name
