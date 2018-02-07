@@ -1,18 +1,18 @@
 {
   "materials": {
-    "std_01 - Default": {
+    "std_01___Default": {
       "metalnessValue": "0.3",
       "roughnessValue": "0.2775",
       "metalnessMap": "",
       "roughnessMap": ""
     },
-    "std_02 - Default": {
+    "std_02___Default": {
       "metalnessValue": "0.3",
       "roughnessValue": "0.51",
       "metalnessMap": "",
       "roughnessMap": ""
     },
-    "std_03 - Default": {
+    "std_03___Default": {
       "metalnessValue": "0.0",
       "roughnessValue": "0.0396",
       "metalnessMap": "",
