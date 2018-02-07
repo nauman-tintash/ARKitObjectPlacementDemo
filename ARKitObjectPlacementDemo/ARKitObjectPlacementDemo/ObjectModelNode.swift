@@ -26,19 +26,56 @@ class ObjectModelNode: SCNNode {
             fatalError("Failed to get mesh from asset.")
         }
         
-        //Texture
-//        let scatteringFunction = MDLPhysicallyPlausibleScatteringFunction()
-        
-//        let material = MDLMaterial(name: "baseMaterial", scatteringFunction: scatteringFunction)
-        
-//        material.setTextureProperties(textures: [ //MDLMaterialSemantic key.value array
-//            .baseColor:"default-wood.jpg"])
-        
-//        for  submesh in object.submeshes!  {
-//            if let submesh = submesh as? MDLSubmesh {
-//                submesh.material = material
-//            }
-//        }
+        do {
+            if let file = Bundle.main.url(forResource: "modelinfo", withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+                
+                if let dictionary = json as? [String: Any] {
+                    if let materials = dictionary["materials"] as? [String: Any] {
+                        // access individual value in dictionary
+                        
+                        for  submesh in object.submeshes!  {
+                            if let submesh = submesh as? MDLSubmesh {
+                                let materialName = submesh.material?.name
+                                
+                                if let materialJSON = materials[materialName!] as? [String: Any] {
+                                    
+                                    let metalnessValueString = materialJSON["metalnessValue"] as? String
+                                    let roughnessValueString = materialJSON["roughnessValue"] as? String
+                                    let metalnessMap = materialJSON["metalnessMap"] as? String
+                                    let roughnessMap = materialJSON["roughnessMap"] as? String
+                                    
+                                    let metalnessValue = (NSString(string: metalnessValueString!)).floatValue
+                                    let roughnessValue = (NSString(string: roughnessValueString!)).floatValue
+                                    
+                                    //Texture
+                                    let material = submesh.material
+
+                                    if (metalnessMap?.isEmpty)!{
+                                        material?.setTextureProperties(textures: [//[MDLMaterialSemantic : Float]
+                                            MDLMaterialSemantic.metallic: metalnessValue,
+                                            MDLMaterialSemantic.roughness: roughnessValue
+                                            ]
+                                        )
+                                    } else {
+                                        material?.setTextureProperties(textures: [//[MDLMaterialSemantic : String]
+                                            MDLMaterialSemantic.metallic: metalnessMap!,
+                                            MDLMaterialSemantic.roughness: roughnessMap!
+                                            ]
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                print("no file")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
         
         let node = SCNNode(mdlObject: object)
         node.name = name
@@ -59,6 +96,14 @@ extension MDLMaterial {
                 fatalError("Failed to find URL for resource \(value).")
             }
             let property = MDLMaterialProperty(name:value, semantic: key, url: url)
+            self.setProperty(property)
+        }
+    }
+    
+    func setTextureProperties(textures: [MDLMaterialSemantic:Float]) -> Void {
+        for (key,value) in textures {
+            let property = MDLMaterialProperty(name: String(value), semantic: key, float: value)
+
             self.setProperty(property)
         }
     }
