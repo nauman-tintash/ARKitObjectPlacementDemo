@@ -41,8 +41,35 @@ We'll use this function to implement all our code related to loading of our mode
 ### Add the sample assets in the project
 Create an Assets folder and place all the assets you need to load into that folder including the obj file as well as the materials and textures.
 
+The assets should have an .obj, .mtl and any required maps files as well as a modelinfo.json file which should contain the roughness and metalness values.
+
+For example:
+`{
+    "materials": {
+        "std_01___Default": {
+            "metalnessValue": "0.3",
+            "roughnessValue": "0.2775",
+            "metalnessMap": "",
+            "roughnessMap": ""
+        },
+        "std_02___Default": {
+            "metalnessValue": "0.3",
+            "roughnessValue": "0.51",
+            "metalnessMap": "",
+            "roughnessMap": ""
+        }
+    }
+}
+`
+
+NOTE: Make sure there aren't any white spaces in any of the filenames as well as any of the material IDs.
+NOTE: Make sure all the material IDs in the modelinfo.json correspond to respective material names in the .mtl file.
+
 ### Implement the ObjectModelNode class
 Implement the ObjectModelNode class to handle the loading of models and textures for a model.
+
+In order to load the model, just load the .obj file. That would load the mesh and also apply the respective materials from the .mtl file.
+Afterwards, simply parse the modelinfo.json file to extract extra features like metalness and roughness and apply those to respective submeshes using the `MDLMaterial.setTextureProperties` function.
 
 ## Useful Resources
 
