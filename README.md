@@ -44,7 +44,8 @@ Create an Assets folder and place all the assets you need to load into that fold
 The assets should have an .obj, .mtl and any required maps files as well as a modelinfo.json file which should contain the roughness and metalness values.
 
 For example:
-`{
+```
+{
     "materials": {
         "std_01___Default": {
             "metalnessValue": "0.3",
@@ -60,9 +61,10 @@ For example:
         }
     }
 }
-`
+```
 
 NOTE: Make sure there aren't any white spaces in any of the filenames as well as any of the material IDs.
+
 NOTE: Make sure all the material IDs in the modelinfo.json correspond to respective material names in the .mtl file.
 
 ### Implement the ObjectModelNode class
