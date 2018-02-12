@@ -1,0 +1,4 @@
+target 'ARKitObjectPlacementDemo' do
+	use_frameworks!
+	pod 'GLTFSceneKit'
+end
