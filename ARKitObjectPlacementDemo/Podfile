@@ -1,4 +1,5 @@
 target 'ARKitObjectPlacementDemo' do
 	use_frameworks!
 	pod 'GLTFSceneKit'
+	pod "FileExplorer", "~> 1.0.4"
 end
