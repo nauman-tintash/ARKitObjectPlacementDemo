@@ -7,26 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		414D62AC202ADC510058F60B /* CenterTable.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 414D62A8202ADC510058F60B /* CenterTable.jpg */; };
-		414D62AD202ADC510058F60B /* CenterTable.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 414D62A9202ADC510058F60B /* CenterTable.mtl */; };
-		414D62AE202ADC510058F60B /* CenterTable.obj in Resources */ = {isa = PBXBuildFile; fileRef = 414D62AA202ADC510058F60B /* CenterTable.obj */; };
-		414D62AF202ADC510058F60B /* modelinfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 414D62AB202ADC510058F60B /* modelinfo.json */; };
 		41789EB820208C1600F019E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41789EB720208C1600F019E1 /* AppDelegate.swift */; };
 		41789EBA20208C1600F019E1 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 41789EB920208C1600F019E1 /* art.scnassets */; };
 		41789EBC20208C1600F019E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41789EBB20208C1600F019E1 /* ViewController.swift */; };
 		41789EBF20208C1600F019E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41789EBD20208C1600F019E1 /* Main.storyboard */; };
 		41789EC120208C1600F019E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41789EC020208C1600F019E1 /* Assets.xcassets */; };
 		41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41789EC220208C1600F019E1 /* LaunchScreen.storyboard */; };
+		417EFA00202D77EA000D14F7 /* ObjectModelNodeGLTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EF9FF202D77EA000D14F7 /* ObjectModelNodeGLTF.swift */; };
+		417EFA32202D897A000D14F7 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 417EFA31202D897A000D14F7 /* Models */; };
+		417EFA34202D8C07000D14F7 /* ObjectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EFA33202D8C07000D14F7 /* ObjectPickerView.swift */; };
 		41933AB520233F0400EEE6AF /* ObjectModelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB420233F0400EEE6AF /* ObjectModelScene.swift */; };
 		41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */; };
 		DE6F665BF4BC3466492FA2D7 /* Pods_ARKitObjectPlacementDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CD8BB5C580616B92ECAF14 /* Pods_ARKitObjectPlacementDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		414D62A8202ADC510058F60B /* CenterTable.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CenterTable.jpg; sourceTree = "<group>"; };
-		414D62A9202ADC510058F60B /* CenterTable.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CenterTable.mtl; sourceTree = "<group>"; };
-		414D62AA202ADC510058F60B /* CenterTable.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CenterTable.obj; sourceTree = "<group>"; };
-		414D62AB202ADC510058F60B /* modelinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modelinfo.json; sourceTree = "<group>"; };
 		05CD8BB5C580616B92ECAF14 /* Pods_ARKitObjectPlacementDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARKitObjectPlacementDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE30669F68CC0598AAC5D70 /* Pods-ARKitObjectPlacementDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitObjectPlacementDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo.release.xcconfig"; sourceTree = "<group>"; };
 		41789EB420208C1600F019E1 /* ARKitObjectPlacementDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitObjectPlacementDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +32,9 @@
 		41789EC020208C1600F019E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41789EC320208C1600F019E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41789EC520208C1600F019E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		417EF9FF202D77EA000D14F7 /* ObjectModelNodeGLTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelNodeGLTF.swift; sourceTree = "<group>"; };
+		417EFA31202D897A000D14F7 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
+		417EFA33202D8C07000D14F7 /* ObjectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPickerView.swift; sourceTree = "<group>"; };
 		41933AB420233F0400EEE6AF /* ObjectModelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelScene.swift; sourceTree = "<group>"; };
 		41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelNode.swift; sourceTree = "<group>"; };
 		55C7C71E59EB6BAC2BA3CE98 /* Pods-ARKitObjectPlacementDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitObjectPlacementDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +91,8 @@
 				41789EC520208C1600F019E1 /* Info.plist */,
 				41933AB420233F0400EEE6AF /* ObjectModelScene.swift */,
 				41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */,
+				417EF9FF202D77EA000D14F7 /* ObjectModelNodeGLTF.swift */,
+				417EFA33202D8C07000D14F7 /* ObjectPickerView.swift */,
 			);
 			path = ARKitObjectPlacementDemo;
 			sourceTree = "<group>";
@@ -248,7 +248,9 @@
 				41933AB520233F0400EEE6AF /* ObjectModelScene.swift in Sources */,
 				41789EBC20208C1600F019E1 /* ViewController.swift in Sources */,
 				41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */,
+				417EFA00202D77EA000D14F7 /* ObjectModelNodeGLTF.swift in Sources */,
 				41789EB820208C1600F019E1 /* AppDelegate.swift in Sources */,
+				417EFA34202D8C07000D14F7 /* ObjectPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

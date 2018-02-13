@@ -1,0 +1,50 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+Nº arquivo criado: 28.10.2015 02:29:21
+
+newmtl DLC8_Batman_Beyond_Head_MAT
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_Head_D.tga
+	map_Kd C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_Head_D.tga
+	map_Ks C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_Head_M.tga
+	map_bump C__Users_mano_Downloads_Nova_pasta_UmodelExport_CV_DLC8_Batman_Beyond_Texture2D__DLC8_Batman_Beyond_Head_N_tga_Saliência_normal.tga
+
+newmtl DLC8_Batman_Beyond_Torso_MAT
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_torso_D.tga
+	map_Kd C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_torso_D.tga
+	map_Ks C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_torso_M.tga
+	map_bump C__Users_mano_Downloads_Nova_pasta_UmodelExport_CV_DLC8_Batman_Beyond_Texture2D__DLC8_Batman_Beyond_torso_N_tga_Saliência_normal.tga
+
+newmtl DLC8_Batman_Beyond_Legs_MAT
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_Leg_D.tga
+	map_Kd C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_Leg_D.tga
+	map_Ks C:\Users\mano\Downloads\Nova pasta\UmodelExport\CV_DLC8_Batman_Beyond\Texture2D\DLC8_Batman_Beyond_Leg_M.tga
+	map_bump C__Users_mano_Downloads_Nova_pasta_UmodelExport_CV_DLC8_Batman_Beyond_Texture2D__DLC8_Batman_Beyond_Leg_N_tga_Saliência_normal.tga
