@@ -10,37 +10,56 @@ import Foundation
 import SceneKit
 import ARKit
 
+public enum ModelType{
+    case kGLTF
+    case kOBJ
+}
+
 class ObjectModelScene: SCNScene {
     
     // Special nodes used to control animations of the model
     private let contentRootNode = SCNNode()
     private var geometryRoot: SCNNode!
     
+    private var wrapperNode: SCNNode!
+    
     // State variables
     private var modelLoaded: Bool = false
     
     // MARK: - Initialization and Loading
     
-    override init() {
+    init(objectModelName: String, modelType: ModelType) {
         super.init()
         
         //TODO: Load the environment map
         
         // Load the chameleon
-        loadModel()
+        loadModel(objectModelName: objectModelName, modelType: modelType)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func loadModel() {
-        let wrapperNode = ObjectModelNode()
+    func loadModel(objectModelName: String, modelType: ModelType) {
+        wrapperNode?.removeFromParentNode()
         
-        self.rootNode.addChildNode(contentRootNode)
-        contentRootNode.addChildNode(wrapperNode)
+        switch modelType {
+        case .kOBJ:
+            wrapperNode = ObjectModelNode(objectModelName: objectModelName)
+            
+            self.rootNode.addChildNode(contentRootNode)
+            contentRootNode.addChildNode(wrapperNode)
+            break
+        case .kGLTF:
+            wrapperNode = ObjectModelNodeGLTF(objectModelName: objectModelName)
+            
+            self.rootNode.addChildNode(contentRootNode)
+            contentRootNode.addChildNode(wrapperNode)
+            break
+        }
         
-        hide()
+//        hide()
         
         setupShader()
         resetState()
