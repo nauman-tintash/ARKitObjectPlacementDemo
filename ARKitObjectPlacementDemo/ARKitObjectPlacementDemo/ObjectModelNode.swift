@@ -26,56 +26,56 @@ class ObjectModelNode: SCNNode {
             fatalError("Failed to get mesh from asset.")
         }
         
-//        do {
-//            if let file = Bundle.main.url(forResource: "Models/" + objectModelName + "/obj/modelinfo", withExtension: "json") {
-//                let data = try Data(contentsOf: file)
-//                let json = try JSONSerialization.jsonObject(with: data, options: [])
-//
-//                if let dictionary = json as? [String: Any] {
-//                    if let materials = dictionary["materials"] as? [String: Any] {
-//                        // access individual value in dictionary
-//
-//                        for  submesh in object.submeshes!  {
-//                            if let submesh = submesh as? MDLSubmesh {
-//                                let materialName = submesh.material?.name
-//
-//                                if let materialJSON = materials[materialName!] as? [String: Any] {
-//
-//                                    let metalnessValueString = materialJSON["metalnessValue"] as? String
-//                                    let roughnessValueString = materialJSON["roughnessValue"] as? String
-//                                    let metalnessMap = materialJSON["metalnessMap"] as? String
-//                                    let roughnessMap = materialJSON["roughnessMap"] as? String
-//
-//                                    let metalnessValue = (NSString(string: metalnessValueString!)).floatValue
-//                                    let roughnessValue = (NSString(string: roughnessValueString!)).floatValue
-//
-//                                    //Texture
-//                                    let material = submesh.material
-//
-//                                    if (metalnessMap?.isEmpty)!{
-//                                        material?.setTextureProperties(textures: [//[MDLMaterialSemantic : Float]
-//                                            MDLMaterialSemantic.metallic: metalnessValue,
-//                                            MDLMaterialSemantic.roughness: roughnessValue
-//                                            ]
-//                                        )
-//                                    } else {
-//                                        material?.setTextureProperties(textures: [//[MDLMaterialSemantic : String]
-//                                            MDLMaterialSemantic.metallic: metalnessMap!,
-//                                            MDLMaterialSemantic.roughness: roughnessMap!
-//                                            ]
-//                                        )
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            } else {
-//                print("no file")
-//            }
-//        } catch {
-//            print(error.localizedDescription)
-//        }
+        do {
+            if let file = Bundle.main.url(forResource: "Models/" + objectModelName + "/obj/modelinfo", withExtension: "json") {
+                let data = try Data(contentsOf: file)
+                let json = try JSONSerialization.jsonObject(with: data, options: [])
+
+                if let dictionary = json as? [String: Any] {
+                    if let materials = dictionary["materials"] as? [String: Any] {
+                        // access individual value in dictionary
+
+                        for  submesh in object.submeshes!  {
+                            if let submesh = submesh as? MDLSubmesh {
+                                let materialName = submesh.material?.name
+
+                                if let materialJSON = materials[materialName!] as? [String: Any] {
+
+                                    let metalnessValueString = materialJSON["metalnessValue"] as? String
+                                    let roughnessValueString = materialJSON["roughnessValue"] as? String
+                                    let metalnessMap = materialJSON["metalnessMap"] as? String
+                                    let roughnessMap = materialJSON["roughnessMap"] as? String
+
+                                    let metalnessValue = (NSString(string: metalnessValueString!)).floatValue
+                                    let roughnessValue = (NSString(string: roughnessValueString!)).floatValue
+
+                                    //Texture
+                                    let material = submesh.material
+
+                                    if (metalnessMap?.isEmpty)!{
+                                        material?.setTextureProperties(textures: [//[MDLMaterialSemantic : Float]
+                                            MDLMaterialSemantic.metallic: metalnessValue,
+                                            MDLMaterialSemantic.roughness: roughnessValue
+                                            ]
+                                        )
+                                    } else {
+                                        material?.setTextureProperties(textures: [//[MDLMaterialSemantic : String]
+                                            MDLMaterialSemantic.metallic: metalnessMap!,
+                                            MDLMaterialSemantic.roughness: roughnessMap!
+                                            ]
+                                        )
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                print("no file")
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
         
         let node = SCNNode(mdlObject: object)
         node.name = name
