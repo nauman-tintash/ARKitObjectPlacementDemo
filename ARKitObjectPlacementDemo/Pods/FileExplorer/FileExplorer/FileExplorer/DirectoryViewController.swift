@@ -134,7 +134,7 @@ final class DirectoryViewController: UIViewController {
     
     // MARK: Actions
 
-    func handleFinishButtonTap() {
+    @objc func handleFinishButtonTap() {
         delegate?.directoryViewControllerDidFinish(self)
     }
 }

@@ -150,13 +150,13 @@ final class DirectoryContentViewController: UICollectionViewController {
 
     // MARK: Actions
 
-    func handleSelectButtonTap() {
+    @objc func handleSelectButtonTap() {
         viewModel.chooseItems { selectedItems in
             delegate?.directoryContentViewController(self, didChooseItems: selectedItems)
         }
     }
 
-    func handleDeleteButtonTap() {
+    @objc func handleDeleteButtonTap() {
         showLoadingIndicator()
         viewModel.deleteItems(at: viewModel.indexPathsOfSelectedCells) { [weak self] result in
             guard let strongSelf = self else { return }
@@ -171,7 +171,7 @@ final class DirectoryContentViewController: UICollectionViewController {
         }
     }
 
-    func handleEditButtonTap() {
+    @objc func handleEditButtonTap() {
         viewModel.isEditing = !viewModel.isEditing
         delegate?.directoryContentViewController(self, didChangeEditingStatus: viewModel.isEditing)
     }

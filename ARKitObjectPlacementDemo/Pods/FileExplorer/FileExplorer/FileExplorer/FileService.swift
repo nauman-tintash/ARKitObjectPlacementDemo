@@ -103,7 +103,7 @@ final class LocalStorageFileService: FileService {
                                     deletedItems,
                                     itemsNotRemovedDueToFailure)
                 } else {
-                    completionBlock(.success(), deletedItems, itemsNotRemovedDueToFailure)
+                    completionBlock(.success(Void()), deletedItems, itemsNotRemovedDueToFailure)
                 }
 
             }
