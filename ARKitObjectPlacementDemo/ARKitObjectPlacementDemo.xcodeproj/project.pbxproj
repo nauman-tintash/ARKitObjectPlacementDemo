@@ -19,6 +19,7 @@
 		41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41789EC220208C1600F019E1 /* LaunchScreen.storyboard */; };
 		41933AB520233F0400EEE6AF /* ObjectModelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB420233F0400EEE6AF /* ObjectModelScene.swift */; };
 		41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */; };
+		DE6F665BF4BC3466492FA2D7 /* Pods_ARKitObjectPlacementDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CD8BB5C580616B92ECAF14 /* Pods_ARKitObjectPlacementDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		414D62A9202ADC510058F60B /* CenterTable.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CenterTable.mtl; sourceTree = "<group>"; };
 		414D62AA202ADC510058F60B /* CenterTable.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CenterTable.obj; sourceTree = "<group>"; };
 		414D62AB202ADC510058F60B /* modelinfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = modelinfo.json; sourceTree = "<group>"; };
+		05CD8BB5C580616B92ECAF14 /* Pods_ARKitObjectPlacementDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARKitObjectPlacementDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BE30669F68CC0598AAC5D70 /* Pods-ARKitObjectPlacementDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitObjectPlacementDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo.release.xcconfig"; sourceTree = "<group>"; };
 		41789EB420208C1600F019E1 /* ARKitObjectPlacementDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARKitObjectPlacementDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41789EB720208C1600F019E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41789EB920208C1600F019E1 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		41789EC520208C1600F019E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41933AB420233F0400EEE6AF /* ObjectModelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelScene.swift; sourceTree = "<group>"; };
 		41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelNode.swift; sourceTree = "<group>"; };
+		55C7C71E59EB6BAC2BA3CE98 /* Pods-ARKitObjectPlacementDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitObjectPlacementDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,21 +47,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6F665BF4BC3466492FA2D7 /* Pods_ARKitObjectPlacementDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		414D62A7202ADC510058F60B /* CenterTable */ = {
+		2335C3CC2A67C5D5CAD421A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				414D62A8202ADC510058F60B /* CenterTable.jpg */,
-				414D62A9202ADC510058F60B /* CenterTable.mtl */,
-				414D62AA202ADC510058F60B /* CenterTable.obj */,
-				414D62AB202ADC510058F60B /* modelinfo.json */,
+				05CD8BB5C580616B92ECAF14 /* Pods_ARKitObjectPlacementDemo.framework */,
 			);
-			path = CenterTable;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		41789EAB20208C1600F019E1 = {
@@ -65,6 +67,8 @@
 			children = (
 				41789EB620208C1600F019E1 /* ARKitObjectPlacementDemo */,
 				41789EB520208C1600F019E1 /* Products */,
+				A64D50FB3FE68014606A77E0 /* Pods */,
+				2335C3CC2A67C5D5CAD421A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,9 +100,18 @@
 		41933AC12029E44500EEE6AF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				414D62A7202ADC510058F60B /* CenterTable */,
+				417EFA31202D897A000D14F7 /* Models */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		A64D50FB3FE68014606A77E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55C7C71E59EB6BAC2BA3CE98 /* Pods-ARKitObjectPlacementDemo.debug.xcconfig */,
+				3BE30669F68CC0598AAC5D70 /* Pods-ARKitObjectPlacementDemo.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,9 +121,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 41789EC820208C1600F019E1 /* Build configuration list for PBXNativeTarget "ARKitObjectPlacementDemo" */;
 			buildPhases = (
+				1AD1F9BEF51288FD90706879 /* [CP] Check Pods Manifest.lock */,
 				41789EB020208C1600F019E1 /* Sources */,
 				41789EB120208C1600F019E1 /* Frameworks */,
 				41789EB220208C1600F019E1 /* Resources */,
+				2B3652AEE21777C6994D17E3 /* [CP] Embed Pods Frameworks */,
+				A7F2A7CA7FD233A3127563EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,18 +176,69 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				417EFA32202D897A000D14F7 /* Models in Resources */,
 				41789EBA20208C1600F019E1 /* art.scnassets in Resources */,
-				414D62AF202ADC510058F60B /* modelinfo.json in Resources */,
 				41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */,
-				414D62AC202ADC510058F60B /* CenterTable.jpg in Resources */,
-				414D62AE202ADC510058F60B /* CenterTable.obj in Resources */,
 				41789EC120208C1600F019E1 /* Assets.xcassets in Resources */,
 				41789EBF20208C1600F019E1 /* Main.storyboard in Resources */,
-				414D62AD202ADC510058F60B /* CenterTable.mtl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AD1F9BEF51288FD90706879 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARKitObjectPlacementDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B3652AEE21777C6994D17E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GLTFSceneKit/GLTFSceneKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GLTFSceneKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7F2A7CA7FD233A3127563EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		41789EB020208C1600F019E1 /* Sources */ = {
@@ -316,6 +383,7 @@
 		};
 		41789EC920208C1600F019E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C7C71E59EB6BAC2BA3CE98 /* Pods-ARKitObjectPlacementDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -332,6 +400,7 @@
 		};
 		41789ECA20208C1600F019E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BE30669F68CC0598AAC5D70 /* Pods-ARKitObjectPlacementDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
