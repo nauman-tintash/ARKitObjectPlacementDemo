@@ -212,10 +212,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FileExplorer/FileExplorer.framework",
 				"${BUILT_PRODUCTS_DIR}/GLTFSceneKit/GLTFSceneKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FileExplorer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GLTFSceneKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
