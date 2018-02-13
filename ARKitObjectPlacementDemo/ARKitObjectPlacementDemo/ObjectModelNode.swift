@@ -17,7 +17,7 @@ class ObjectModelNode: SCNNode {
         super.init()
         
         //Load .obj
-        guard let url = Bundle.main.url(forResource: "Models/" + objectModelName + "/obj/scene", withExtension: "obj") else {
+        guard let url = Bundle.main.url(forResource: "Models/" + objectModelName + "/" + objectModelName, withExtension: "obj") else {
             fatalError("Failed to find model file.")
         }
 
@@ -27,7 +27,7 @@ class ObjectModelNode: SCNNode {
         }
         
         do {
-            if let file = Bundle.main.url(forResource: "Models/" + objectModelName + "/obj/modelinfo", withExtension: "json") {
+            if let file = Bundle.main.url(forResource: "Models/" + objectModelName + "/modelinfo", withExtension: "json") {
                 let data = try Data(contentsOf: file)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
 
@@ -79,6 +79,8 @@ class ObjectModelNode: SCNNode {
         
         let node = SCNNode(mdlObject: object)
         node.name = name
+        
+        node.scale = SCNVector3(10, 10, 10)
         
         self.addChildNode(node)
     }
