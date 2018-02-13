@@ -17,11 +17,24 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBOutlet weak var sessionInfoView: UIView!
     @IBOutlet weak var sessionInfoLabel: UILabel!
     
+    @IBOutlet weak var objectPickerView : UIPickerView!
+    
+    // MARK: - Attributes
+    var pickerData: [String]!
     var objectModelScene: ObjectModelScene!
+    
+    var currentlySelectedModelIndex: Int?
+    var currentlySelectedModelType: ModelType?
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerData = []
+        getObjectModelsList()
+        
+        objectPickerView.delegate = self
+        objectPickerView.dataSource = self
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -34,8 +47,12 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
         // Create a new scene
 //        shipScene = SCNScene(named: "art.scnassets/ship.scn")!
+        currentlySelectedModelIndex = 2
+        currentlySelectedModelType = ModelType.kOBJ
         
-        objectModelScene = ObjectModelScene()
+        objectModelScene = ObjectModelScene(objectModelName: pickerData[currentlySelectedModelIndex!], modelType: currentlySelectedModelType!)
+        
+        objectModelScene.hide()
         
         // Set the scene to the view
         sceneView.scene = objectModelScene
@@ -148,6 +165,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     @IBAction func didTap(_ recognizer: UITapGestureRecognizer) {
         let location = recognizer.location(in: sceneView)
         
+        print("LOG: DidTap")
+        
         // When tapped on a plane, reposition the content
         let arHitTestResult = sceneView.hitTest(location, types: .existingPlane)
         if !arHitTestResult.isEmpty {
@@ -158,6 +177,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
 //
 //            // Set the scene to the view
 //            sceneView.scene = shipScene
+
+            
             
             objectModelScene.show()
             objectModelScene.setTransform(hit.worldTransform)
@@ -166,6 +187,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     @IBAction func didPan(_ recognizer: UIPanGestureRecognizer) {
         let location = recognizer.location(in: sceneView)
+        
+        print("LOG: DidPan")
         
         // Drag the object on an infinite plane
         let arHitTestResult = sceneView.hitTest(location, types: .existingPlane)
@@ -216,5 +239,24 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
         // Run the view's session
         sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])
+    }
+    
+    private func getObjectModelsList() {
+        var files : NSArray?
+        
+        let appPath = Bundle.main.resourceURL
+        let firmwareDirectoryPath = appPath?.appendingPathComponent("Models")
+        
+        do{
+            try files = FileManager.default.contentsOfDirectory(at: firmwareDirectoryPath!, includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsSubdirectoryDescendants) as NSArray?
+        }catch{
+            print("Error \(error)")
+        }
+        
+        
+        for item in files! {
+            let directoryURL = item as! NSURL
+            pickerData.append(directoryURL.lastPathComponent!)
+        }
     }
 }
