@@ -27,7 +27,6 @@ class ObjectModelNodeGLTF: SCNNode {
         }
         
         let node = scene.rootNode
-//        node.scale = SCNVector3(0.1, 0.1, 0.1)
         
         self.addChildNode(node)
     }

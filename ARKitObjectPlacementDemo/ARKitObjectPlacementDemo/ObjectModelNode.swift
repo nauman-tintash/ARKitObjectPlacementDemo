@@ -76,8 +76,6 @@ class ObjectModelNode: SCNNode {
         let node = SCNNode(mdlObject: object)
         node.name = name
         
-        node.scale = SCNVector3(15, 15, 15)
-        
         self.addChildNode(node)
     }
     
