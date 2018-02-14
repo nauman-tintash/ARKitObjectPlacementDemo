@@ -28,43 +28,46 @@ class ObjectModelScene: SCNScene {
     
     // MARK: - Initialization and Loading
     
-    init(objectModelName: String, modelType: ModelType) {
+    override init() {
         super.init()
         
         //TODO: Load the environment map
         
-        // Load the chameleon
-        loadModel(objectModelName: objectModelName, modelType: modelType)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func loadModel(objectModelName: String, modelType: ModelType) {
+    func loadModel(objectModelURL: URL) {
         wrapperNode?.removeFromParentNode()
         
-        switch modelType {
-        case .kOBJ:
-            wrapperNode = ObjectModelNode(objectModelName: objectModelName)
+        if !objectModelURL.absoluteString.isEmpty && objectModelURL.isFileURL {
+        
+            let modelType = objectModelURL.absoluteString.hasSuffix(".obj") ? ModelType.kOBJ : ModelType.kGLTF
             
-            self.rootNode.addChildNode(contentRootNode)
-            contentRootNode.addChildNode(wrapperNode)
-            break
-        case .kGLTF:
-            wrapperNode = ObjectModelNodeGLTF(objectModelName: objectModelName)
+            switch modelType {
+            case .kOBJ:
+                wrapperNode = ObjectModelNode(objectModelURL: objectModelURL)
+                
+                self.rootNode.addChildNode(contentRootNode)
+                contentRootNode.addChildNode(wrapperNode)
+                break
+            case .kGLTF:
+                wrapperNode = ObjectModelNodeGLTF(objectModelURL: objectModelURL)
+                
+                self.rootNode.addChildNode(contentRootNode)
+                contentRootNode.addChildNode(wrapperNode)
+                break
+            }
             
-            self.rootNode.addChildNode(contentRootNode)
-            contentRootNode.addChildNode(wrapperNode)
-            break
+    //        hide()
+            
+            setupShader()
+            resetState()
+            
+            modelLoaded = true
         }
-        
-//        hide()
-        
-        setupShader()
-        resetState()
-        
-        modelLoaded = true
     }
     
     // MARK: - Public API

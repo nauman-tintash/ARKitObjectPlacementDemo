@@ -56,21 +56,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3vB-DC-v6b">
-                                <rect key="frame" x="0.0" y="44" width="132" height="76"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uJ9-cH-cXk">
-                                <rect key="frame" x="156" y="68" width="121" height="29"/>
+                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GE5-oO-mHo">
+                                <rect key="frame" x="16" y="44" width="128" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="OBJ"/>
-                                    <segment title="glTF"/>
-                                </segments>
+                                <color key="backgroundColor" red="0.93156536551503333" green="1" blue="0.9913094780358076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Choose Model">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
                                 <connections>
-                                    <action selector="ObjectPickerValueChanged:" destination="BV1-FR-VrT" eventType="valueChanged" id="CC2-4D-Nme"/>
+                                    <action selector="chooseModelCallback:" destination="BV1-FR-VrT" eventType="touchDown" id="ujn-uh-hoX"/>
                                 </connections>
-                            </segmentedControl>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -86,7 +83,6 @@
                         <viewLayoutGuide key="safeArea" id="oTl-l6-5nM"/>
                     </view>
                     <connections>
-                        <outlet property="objectPickerView" destination="3vB-DC-v6b" id="gSn-mg-eAi"/>
                         <outlet property="sceneView" destination="6uL-6Y-HNV" id="ddQ-PP-UPN"/>
                         <outlet property="sessionInfoLabel" destination="cH9-T0-nTH" id="Gre-jq-TUw"/>
                         <outlet property="sessionInfoView" destination="Y8W-ci-KvW" id="5dB-OS-V2v"/>
