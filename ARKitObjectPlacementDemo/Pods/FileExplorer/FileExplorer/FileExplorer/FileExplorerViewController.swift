@@ -67,6 +67,11 @@ public final class FileExplorerViewController: UIViewController {
     ///
     /// Results of multiple filters are combined and displayed by file explorer view controller. All files are displayed if `fileFilters` array is empty.
     public var fileFilters = [Filter]()
+    
+    /// Filters that determine which files extensions can be selected by file explorer view controller.
+    ///
+    /// A list of String containing all the selectable file folmats. All files are displayed if `fileFilters` array is empty.
+    public var selectableFileExtension = [String]()
 
     /// Filters that determine which files aren't displayed by file explorer view controller.
     ///
@@ -118,7 +123,7 @@ public final class FileExplorerViewController: UIViewController {
                                                         canChooseFiles: canChooseFiles,
                                                         canChooseDirectories: canChooseDirectories,
                                                         allowsMultipleSelection: allowsMultipleSelection)
-        let filteringConfiguration = FilteringConfiguration(fileFilters: fileFilters, ignoredFileFilters: ignoredFileFilters)
+        let filteringConfiguration = FilteringConfiguration(fileFilters: fileFilters, ignoredFileFilters: ignoredFileFilters, selectableFileExtension:selectableFileExtension)
         let configuration = Configuration(actionsConfiguration: actionsConfiguration, filteringConfiguration: filteringConfiguration)
 
         if let item = Item<Any>.at(initialDirectoryURL, isDirectory: true) {

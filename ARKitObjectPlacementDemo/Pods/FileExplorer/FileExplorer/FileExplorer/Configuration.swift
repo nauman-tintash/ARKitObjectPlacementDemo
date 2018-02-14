@@ -28,6 +28,21 @@ import Foundation
 struct Configuration {
     var actionsConfiguration = ActionsConfiguration()
     var filteringConfiguration = FilteringConfiguration()
+    
+    func isSelectableFileExt (fileItem: Item<Any>) -> Bool{
+        var isSelectable = true
+        
+        if filteringConfiguration.selectableFileExtension.count > 0 {
+            isSelectable = false
+            for selectableExtension in filteringConfiguration.selectableFileExtension {
+                if fileItem.extension == selectableExtension {
+                    isSelectable = true
+                    break
+                }
+            }
+        }
+        return isSelectable
+    }
 }
 
 struct ActionsConfiguration {
@@ -41,11 +56,12 @@ struct ActionsConfiguration {
 struct FilteringConfiguration {
     var fileFilters: [Filter]
     var ignoredFileFilters: [Filter]
+    var selectableFileExtension: [String]
 }
 
 extension FilteringConfiguration {
     init() {
-        self.init(fileFilters: [Filter](), ignoredFileFilters: [Filter]())
+        self.init(fileFilters: [Filter](), ignoredFileFilters: [Filter](), selectableFileExtension: [String]())
     }
 }
 
