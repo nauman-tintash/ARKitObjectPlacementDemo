@@ -15,7 +15,7 @@
 		41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41789EC220208C1600F019E1 /* LaunchScreen.storyboard */; };
 		417EFA00202D77EA000D14F7 /* ObjectModelNodeGLTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EF9FF202D77EA000D14F7 /* ObjectModelNodeGLTF.swift */; };
 		417EFA32202D897A000D14F7 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 417EFA31202D897A000D14F7 /* Models */; };
-		417EFA34202D8C07000D14F7 /* ObjectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EFA33202D8C07000D14F7 /* ObjectPickerView.swift */; };
+		417EFA34202D8C07000D14F7 /* FileExplorerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EFA33202D8C07000D14F7 /* FileExplorerController.swift */; };
 		41933AB520233F0400EEE6AF /* ObjectModelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB420233F0400EEE6AF /* ObjectModelScene.swift */; };
 		41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */; };
 		DE6F665BF4BC3466492FA2D7 /* Pods_ARKitObjectPlacementDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CD8BB5C580616B92ECAF14 /* Pods_ARKitObjectPlacementDemo.framework */; };
@@ -34,7 +34,7 @@
 		41789EC520208C1600F019E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		417EF9FF202D77EA000D14F7 /* ObjectModelNodeGLTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelNodeGLTF.swift; sourceTree = "<group>"; };
 		417EFA31202D897A000D14F7 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
-		417EFA33202D8C07000D14F7 /* ObjectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectPickerView.swift; sourceTree = "<group>"; };
+		417EFA33202D8C07000D14F7 /* FileExplorerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExplorerController.swift; sourceTree = "<group>"; };
 		41933AB420233F0400EEE6AF /* ObjectModelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelScene.swift; sourceTree = "<group>"; };
 		41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelNode.swift; sourceTree = "<group>"; };
 		55C7C71E59EB6BAC2BA3CE98 /* Pods-ARKitObjectPlacementDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitObjectPlacementDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 				41933AB420233F0400EEE6AF /* ObjectModelScene.swift */,
 				41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */,
 				417EF9FF202D77EA000D14F7 /* ObjectModelNodeGLTF.swift */,
-				417EFA33202D8C07000D14F7 /* ObjectPickerView.swift */,
+				417EFA33202D8C07000D14F7 /* FileExplorerController.swift */,
 			);
 			path = ARKitObjectPlacementDemo;
 			sourceTree = "<group>";
@@ -212,10 +212,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FileExplorer/FileExplorer.framework",
 				"${BUILT_PRODUCTS_DIR}/GLTFSceneKit/GLTFSceneKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FileExplorer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GLTFSceneKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,7 +252,7 @@
 				41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */,
 				417EFA00202D77EA000D14F7 /* ObjectModelNodeGLTF.swift in Sources */,
 				41789EB820208C1600F019E1 /* AppDelegate.swift in Sources */,
-				417EFA34202D8C07000D14F7 /* ObjectPickerView.swift in Sources */,
+				417EFA34202D8C07000D14F7 /* FileExplorerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,21 +13,17 @@ import SceneKit.ModelIO
 
 class ObjectModelNode: SCNNode {
     
-    init(objectModelName: String) {
+    init(objectModelURL: URL) {
         super.init()
         
         //Load .obj
-        guard let url = Bundle.main.url(forResource: "Models/" + objectModelName + "/" + objectModelName, withExtension: "obj") else {
-            fatalError("Failed to find model file.")
-        }
-
-        let asset = MDLAsset(url:url)
+        let asset = MDLAsset(url:objectModelURL)
         guard let object = asset.object(at: 0) as? MDLMesh else {
             fatalError("Failed to get mesh from asset.")
         }
         
         do {
-            if let file = Bundle.main.url(forResource: "Models/" + objectModelName + "/modelinfo", withExtension: "json") {
+            if let file = Bundle.main.url(forResource: objectModelURL.deletingLastPathComponent().absoluteString + "/modelinfo" , withExtension: "json") {
                 let data = try Data(contentsOf: file)
                 let json = try JSONSerialization.jsonObject(with: data, options: [])
 
@@ -80,7 +76,7 @@ class ObjectModelNode: SCNNode {
         let node = SCNNode(mdlObject: object)
         node.name = name
         
-        node.scale = SCNVector3(10, 10, 10)
+        node.scale = SCNVector3(15, 15, 15)
         
         self.addChildNode(node)
     }

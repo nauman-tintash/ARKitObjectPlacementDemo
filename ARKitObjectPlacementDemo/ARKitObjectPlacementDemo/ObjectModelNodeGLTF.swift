@@ -13,16 +13,12 @@ import GLTFSceneKit
 
 class ObjectModelNodeGLTF: SCNNode {
     
-    init(objectModelName: String) {
+    init(objectModelURL: URL) {
         super.init()
         
         var scene: SCNScene
         do {
-            guard let url = Bundle.main.url(forResource: "Models/" + objectModelName + "/gltf/scene", withExtension: "gltf") else {
-                fatalError("Failed to find model file.")
-            }
-
-            let sceneSource = GLTFSceneSource(url: url)
+            let sceneSource = GLTFSceneSource(url: objectModelURL)
             scene = try sceneSource.scene()
             
         } catch {
