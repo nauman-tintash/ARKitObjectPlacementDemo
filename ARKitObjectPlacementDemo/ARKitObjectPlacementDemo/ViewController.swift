@@ -51,6 +51,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         
         // Set the scene to the view
         sceneView.scene = objectModelScene
+        
+        //Set the environment attributes
+        sceneView.autoenablesDefaultLighting = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -118,6 +121,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
          */
         plane.width = CGFloat(planeAnchor.extent.x)
         plane.height = CGFloat(planeAnchor.extent.z)
+    }
+    
+    //MARK: Update at interval
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        let lightEstimate = self.sceneView.session.currentFrame?.lightEstimate
+        
+        if (lightEstimate != nil) {
+            print (lightEstimate?.ambientIntensity)
+            // Here you can now change the .intensity property of your lights
+            // so they respond to the real world environment
+            objectModelScene.setLightIntensity(lightIntensity: (lightEstimate?.ambientIntensity)!)
+        }
     }
     
     // MARK: - ARSessionDelegate
@@ -220,6 +235,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         // Create a session configuration with horizontal plane detection
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
+        configuration.isLightEstimationEnabled = true
         
         // Run the view's session
         sceneView.session.run(configuration, options: [.removeExistingAnchors, .resetTracking])

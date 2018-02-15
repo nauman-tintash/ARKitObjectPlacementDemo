@@ -18,6 +18,7 @@
 		417EFA34202D8C07000D14F7 /* FileExplorerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417EFA33202D8C07000D14F7 /* FileExplorerController.swift */; };
 		41933AB520233F0400EEE6AF /* ObjectModelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB420233F0400EEE6AF /* ObjectModelScene.swift */; };
 		41933AB72029D5DC00EEE6AF /* ObjectModelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */; };
+		41A9787B203582C10025194F /* Multi-Area-Light.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 41A9787A203582BF0025194F /* Multi-Area-Light.jpg */; };
 		DE6F665BF4BC3466492FA2D7 /* Pods_ARKitObjectPlacementDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05CD8BB5C580616B92ECAF14 /* Pods_ARKitObjectPlacementDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		417EFA33202D8C07000D14F7 /* FileExplorerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExplorerController.swift; sourceTree = "<group>"; };
 		41933AB420233F0400EEE6AF /* ObjectModelScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelScene.swift; sourceTree = "<group>"; };
 		41933AB62029D5DC00EEE6AF /* ObjectModelNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelNode.swift; sourceTree = "<group>"; };
+		41A9787A203582BF0025194F /* Multi-Area-Light.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Multi-Area-Light.jpg"; sourceTree = "<group>"; };
 		55C7C71E59EB6BAC2BA3CE98 /* Pods-ARKitObjectPlacementDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARKitObjectPlacementDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARKitObjectPlacementDemo/Pods-ARKitObjectPlacementDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 		41933AC12029E44500EEE6AF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				41A9787A203582BF0025194F /* Multi-Area-Light.jpg */,
 				417EFA31202D897A000D14F7 /* Models */,
 			);
 			path = Assets;
@@ -181,6 +184,7 @@
 				41789EC420208C1600F019E1 /* LaunchScreen.storyboard in Resources */,
 				41789EC120208C1600F019E1 /* Assets.xcassets in Resources */,
 				41789EBF20208C1600F019E1 /* Main.storyboard in Resources */,
+				41A9787B203582C10025194F /* Multi-Area-Light.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
