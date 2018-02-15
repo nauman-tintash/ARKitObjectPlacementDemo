@@ -88,8 +88,13 @@ class ObjectModelScene: SCNScene {
         return !contentRootNode.isHidden
     }
     
-    func setTransform(_ transform: simd_float4x4) {
-        contentRootNode.simdTransform = transform
+    func setPosition(_ position: SCNVector3) {
+        contentRootNode.position = position
+    }
+    
+    func setRotation(_ rotationAngle: Float) {
+        print(contentRootNode.rotation)
+        contentRootNode.rotation = SCNVector4Make(0, -1, 0, rotationAngle + contentRootNode.rotation.w)
     }
     
     func setLightIntensity(lightIntensity: CGFloat) {

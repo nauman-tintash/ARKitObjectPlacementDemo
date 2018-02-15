@@ -24,9 +24,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
     
     var currentlySelectedModelURL: URL?
     
+    var previousRotation: CGFloat?
+    
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        previousRotation = 0
         
         //Initialize the file explorer view controller
         initializeFileExplorerView()
@@ -128,7 +132,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         let lightEstimate = self.sceneView.session.currentFrame?.lightEstimate
         
         if (lightEstimate != nil) {
-            print (lightEstimate?.ambientIntensity)
             // Here you can now change the .intensity property of your lights
             // so they respond to the real world environment
             objectModelScene.setLightIntensity(lightIntensity: (lightEstimate?.ambientIntensity)!)
@@ -182,7 +185,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
             let hit = arHitTestResult.first!
             
             objectModelScene.show()
-            objectModelScene.setTransform(hit.worldTransform)
+            
+            let position = SCNVector3Make(hit.worldTransform.columns.3.x,
+                                          hit.worldTransform.columns.3.y,
+                                          hit.worldTransform.columns.3.z);
+            objectModelScene.setPosition(position)
         }
     }
     
@@ -193,8 +200,25 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         let arHitTestResult = sceneView.hitTest(location, types: .existingPlane)
         if !arHitTestResult.isEmpty {
             let hit = arHitTestResult.first!
-            objectModelScene.setTransform(hit.worldTransform)
+            
+            let position = SCNVector3Make(hit.worldTransform.columns.3.x,
+                                          hit.worldTransform.columns.3.y,
+                                          hit.worldTransform.columns.3.z);
+            objectModelScene.setPosition(position)
         }
+    }
+    
+    @IBAction func didRotate(_ recognizer: UIRotationGestureRecognizer) {
+        let rotationInRad = recognizer.rotation
+        
+        var deltaRotation = rotationInRad - previousRotation!
+        previousRotation = rotationInRad
+        
+        if recognizer.state == UIGestureRecognizerState.began {
+            deltaRotation = 0
+        }
+        
+        objectModelScene.setRotation(Float(deltaRotation))
     }
     
     // MARK: - Private Functions.

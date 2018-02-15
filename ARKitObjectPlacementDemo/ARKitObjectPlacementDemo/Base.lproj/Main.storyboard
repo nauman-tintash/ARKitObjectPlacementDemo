@@ -24,6 +24,7 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="cep-NM-XgC" appends="YES" id="MUb-ud-d24"/>
                                     <outletCollection property="gestureRecognizers" destination="GTX-zm-gx2" appends="YES" id="5lr-0g-pRq"/>
+                                    <outletCollection property="gestureRecognizers" destination="48Z-HS-sL2" appends="YES" id="oe9-nt-TGo"/>
                                 </connections>
                             </arscnView>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-ci-KvW" userLabel="Session Info View">
@@ -99,6 +100,11 @@
                         <action selector="didPan:" destination="BV1-FR-VrT" id="3Xd-D9-18f"/>
                     </connections>
                 </panGestureRecognizer>
+                <rotationGestureRecognizer id="48Z-HS-sL2">
+                    <connections>
+                        <action selector="didRotate:" destination="BV1-FR-VrT" id="QA4-Xv-QuC"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="102.70935960591133"/>
         </scene>
