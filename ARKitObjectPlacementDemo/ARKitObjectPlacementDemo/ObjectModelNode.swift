@@ -13,70 +13,76 @@ import SceneKit.ModelIO
 
 class ObjectModelNode: SCNNode {
     
+    //TODO: Refactor this function into a bit more organised form.
     init(objectModelURL: URL) {
         super.init()
         
-        //Load .obj
-        let asset = MDLAsset(url:objectModelURL)
-        guard let object = asset.object(at: 0) as? MDLMesh else {
-            fatalError("Failed to get mesh from asset.")
-        }
-        
         do {
-            if let file = Bundle.main.url(forResource: objectModelURL.deletingLastPathComponent().absoluteString + "/modelinfo" , withExtension: "json") {
-                let data = try Data(contentsOf: file)
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
+            let loadedScene = try SCNScene(url: objectModelURL, options: nil)
+            
+            let rootNode = loadedScene.rootNode
+            
+            let childNodes = rootNode.childNodes
+            
+            var modelInfoString = objectModelURL.deletingLastPathComponent().absoluteString
+            modelInfoString = modelInfoString + "modelinfo.json"
+            let jsonFile = URL(string: modelInfoString)
+            
+            let jsonData = try Data(contentsOf: jsonFile!)
+            let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
+            
+            if let dictionary = jsonObject as? [String: Any] {
+                if let materialsDictionary = dictionary["materials"] as? [String: Any] {
+                    
+                    for childNode in childNodes {
+                        let materialsInNode = childNode.geometry?.materials
+                        
+                        for materialObject in materialsInNode! {
+                            materialObject.lightingModel = SCNMaterial.LightingModel.physicallyBased
+                            
+                            let materialName = materialObject.name
+                            
+                            print("DEBUG: Material Name : " + materialName!)
+                            
+                            if let materialJSON = materialsDictionary[materialName!] as? [String: Any] {
+                                
+                                let metalnessValueString = materialJSON["metalnessValue"] as? String
+                                let roughnessValueString = materialJSON["roughnessValue"] as? String
+                                let metalnessMap = materialJSON["metalnessMap"] as? String
+                                let roughnessMap = materialJSON["roughnessMap"] as? String
+                                
+                                let metalnessValue = (NSString(string: metalnessValueString!)).floatValue
+                                let roughnessValue = (NSString(string: roughnessValueString!)).floatValue
+                                
+                                //Texture
+                                if (metalnessMap != ""){
+                                    var roughnessMapString = objectModelURL.deletingLastPathComponent().absoluteString
+                                    roughnessMapString = roughnessMapString + roughnessMap!
+                                    let roughnessMapURL = URL(string: roughnessMapString)
 
-                if let dictionary = json as? [String: Any] {
-                    if let materials = dictionary["materials"] as? [String: Any] {
-                        // access individual value in dictionary
-
-                        for  submesh in object.submeshes!  {
-                            if let submesh = submesh as? MDLSubmesh {
-                                let materialName = submesh.material?.name
-
-                                if let materialJSON = materials[materialName!] as? [String: Any] {
-
-                                    let metalnessValueString = materialJSON["metalnessValue"] as? String
-                                    let roughnessValueString = materialJSON["roughnessValue"] as? String
-                                    let metalnessMap = materialJSON["metalnessMap"] as? String
-                                    let roughnessMap = materialJSON["roughnessMap"] as? String
-
-                                    let metalnessValue = (NSString(string: metalnessValueString!)).floatValue
-                                    let roughnessValue = (NSString(string: roughnessValueString!)).floatValue
-
-                                    //Texture
-                                    let material = submesh.material
-
-                                    if (metalnessMap?.isEmpty)!{
-                                        material?.setTextureProperties(textures: [//[MDLMaterialSemantic : Float]
-                                            MDLMaterialSemantic.metallic: metalnessValue,
-                                            MDLMaterialSemantic.roughness: roughnessValue
-                                            ]
-                                        )
-                                    } else {
-                                        material?.setTextureProperties(textures: [//[MDLMaterialSemantic : String]
-                                            MDLMaterialSemantic.metallic: metalnessMap!,
-                                            MDLMaterialSemantic.roughness: roughnessMap!
-                                            ]
-                                        )
-                                    }
+                                    let imageData = try Data(contentsOf: roughnessMapURL!)
+                                    materialObject.roughness.contents = UIImage(data: imageData)
+                                    
+                                    var metalnessMapString = objectModelURL.deletingLastPathComponent().absoluteString
+                                    metalnessMapString = metalnessMapString + metalnessMap!
+                                    let metalnessMapURL = URL(string: metalnessMapString)
+                                    
+                                    let imageDataMetalness = try Data(contentsOf: metalnessMapURL!)
+                                    materialObject.metalness.contents = UIImage(data: imageDataMetalness)
+                                } else {
+                                    materialObject.roughness.contents = CGFloat(roughnessValue)
+                                    materialObject.metalness.contents = CGFloat(metalnessValue)
                                 }
                             }
                         }
+                        
+                        self.addChildNode(childNode)
                     }
                 }
-            } else {
-                print("no file")
             }
         } catch {
-            print(error.localizedDescription)
+            print(error)
         }
-        
-        let node = SCNNode(mdlObject: object)
-        node.name = name
-        
-        self.addChildNode(node)
     }
     
     required init?(coder aDecoder: NSCoder) {
