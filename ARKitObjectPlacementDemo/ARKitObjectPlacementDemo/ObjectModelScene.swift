@@ -23,7 +23,7 @@ class ObjectModelScene: SCNScene {
     
     private var wrapperNode: SCNNode!
     
-    private var spotLight: SCNLight!
+    private var spotLight: SCNLight?
     // State variables
     private var modelLoaded: Bool = false
     
@@ -32,10 +32,10 @@ class ObjectModelScene: SCNScene {
         super.init()
         
         //TODO: Load the environment map
-        insertSpotLight(atPosition: SCNVector3(0, 5, 0))
+//        insertSpotLight(atPosition: SCNVector3(0, 5, 0))
         
-        let image = UIImage(named: "Multi-Area-Light.jpg")
-        lightingEnvironment.contents = image
+//        let image = UIImage(named: "Multi-Area-Light.jpg")
+//        lightingEnvironment.contents = image
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -98,7 +98,8 @@ class ObjectModelScene: SCNScene {
     }
     
     func setLightIntensity(lightIntensity: CGFloat) {
-        spotLight.intensity = lightIntensity / 10
+//        spotLight?.intensity = lightIntensity / 1000
+//        lightingEnvironment.intensity = lightIntensity / 1000
     }
 }
 
@@ -126,9 +127,9 @@ extension ObjectModelScene {
     
     private func insertSpotLight( atPosition: SCNVector3) {
         spotLight = SCNLight()
-        spotLight.type = SCNLight.LightType.spot
-        spotLight.spotInnerAngle = 45
-        spotLight.spotOuterAngle = 45
+        spotLight?.type = SCNLight.LightType.spot
+        spotLight?.spotInnerAngle = 45
+        spotLight?.spotOuterAngle = 45
         
         let spotLightNode = SCNNode()
         spotLightNode.light = spotLight

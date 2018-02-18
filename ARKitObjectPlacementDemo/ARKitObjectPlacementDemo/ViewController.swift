@@ -57,7 +57,8 @@ class ViewController: UIViewController, ARSCNViewDelegate, ARSessionDelegate {
         sceneView.scene = objectModelScene
         
         //Set the environment attributes
-        sceneView.autoenablesDefaultLighting = false
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.automaticallyUpdatesLighting = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
