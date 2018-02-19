@@ -26,24 +26,24 @@ Add IBOutlets for ARSCNScene, Session Info View and the label for session info.
 - Implement the `startNewSession` as private function as implemented in this demo.
 - Implement the functions to implement ARSCNViewDelegate and ARSessionDelegate as implemented in this demo.
 
-### Create a scene class to control the model
+### Create a scene class to create a scene for our model
 - Implement the ObjectModelScene inherited from SCNScene as implemented in the demo.
 - Modify the `loadModel` function and `setupShader()` functions to implement the respective features for your specific model.
 
 ### Place the object on a horizontal plane
-- Add the tap and pan gestures to the storyboard.
-- Implement the `didPan` and `didTap` gestures in the UIViewController and set those as outlets for IBActions for didPan and didTap.
-- Use the impementation of `didPan` and `didTap` from this demo to control the positioning of the model on horizontal surfaces.
+- Add the tap, pan and rotate gestures to the storyboard.
+- Implement the `didPan`, `didTap` and `didRotate` gestures in the UIViewController and set those as outlets for IBActions for didPan, didTap and didRotate.
+- Use the impementation of `didPan`, `didTap` and `didRotate` from this demo to control the positioning of the model on horizontal surfaces.
 
 ### `loadModel` Funtion
-We'll use this function to implement all our code related to loading of our model into the scene.
+We'll use this function to load the model node for our scene. Here we check for the extension of the model and decide whether to load a glTF node or OBJ node.
 
 ### Add the sample assets in the project
-Create an Assets folder and place all the assets you need to load into that folder including the obj file as well as the materials and textures.
+Create an Assets folder in the project and iside this, place all the assets in whatever dirrectory structure suits you.
 
-The assets should have an .obj, .mtl and any required maps files as well as a modelinfo.json file which should contain the roughness and metalness values.
+For OBJ models, the assets should have an .obj, .mtl and any required maps files as well as a modelinfo.json file which should contain the roughness and metalness values. The glTF would require a glTF file and any separate maps being used.
 
-For example:
+Sample modelinfo.json:
 ```
 {
     "materials": {
@@ -54,10 +54,10 @@ For example:
             "roughnessMap": ""
         },
         "std_02___Default": {
-            "metalnessValue": "0.3",
-            "roughnessValue": "0.51",
-            "metalnessMap": "",
-            "roughnessMap": ""
+            "metalnessValue": "",
+            "roughnessValue": "",
+            "metalnessMap": "metalness_map_file.jpg",
+            "roughnessMap": "roughness_map_file.jpg"
         }
     }
 }
@@ -71,7 +71,11 @@ NOTE: Make sure all the material IDs in the modelinfo.json correspond to respect
 Implement the ObjectModelNode class to handle the loading of models and textures for a model.
 
 In order to load the model, just load the .obj file. That would load the mesh and also apply the respective materials from the .mtl file.
-Afterwards, simply parse the modelinfo.json file to extract extra features like metalness and roughness and apply those to respective submeshes using the `MDLMaterial.setTextureProperties` function.
+Afterwards, simply parse the modelinfo.json file to extract extra features like metalness and roughness and apply those to respective submeshes using the `SCNMaterial` class.
+
+### Add Lights to the scene
+- Implement the insert spot light function as done in the demo to add a spot light to the scene if you want.
+- With PBR it is recommended to add environment maps instead of spot light. In order to do that, set the contents of environment map to an image and disable the spotlight.
 
 ## Useful Resources
 
