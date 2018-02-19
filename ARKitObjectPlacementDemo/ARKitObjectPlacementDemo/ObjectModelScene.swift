@@ -47,22 +47,10 @@ class ObjectModelScene: SCNScene {
         
         if !objectModelURL.absoluteString.isEmpty && objectModelURL.isFileURL {
         
-            let modelType = objectModelURL.absoluteString.hasSuffix(".obj") ? ModelType.kOBJ : ModelType.kGLTF
+            wrapperNode = ObjectModelNode(objectModelURL: objectModelURL)
             
-            switch modelType {
-            case .kOBJ:
-                wrapperNode = ObjectModelNode(objectModelURL: objectModelURL)
-                
-                self.rootNode.addChildNode(contentRootNode)
-                contentRootNode.addChildNode(wrapperNode)
-                break
-            case .kGLTF:
-                wrapperNode = ObjectModelNodeGLTF(objectModelURL: objectModelURL)
-                
-                self.rootNode.addChildNode(contentRootNode)
-                contentRootNode.addChildNode(wrapperNode)
-                break
-            }
+            self.rootNode.addChildNode(contentRootNode)
+            contentRootNode.addChildNode(wrapperNode)
             
     //        hide()
             

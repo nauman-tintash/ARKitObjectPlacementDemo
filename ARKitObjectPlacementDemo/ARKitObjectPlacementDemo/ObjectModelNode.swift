@@ -9,7 +9,7 @@
 import Foundation
 import SceneKit
 import ARKit
-import SceneKit.ModelIO
+import GLTFSceneKit
 
 class ObjectModelNode: SCNNode {
     
@@ -18,13 +18,44 @@ class ObjectModelNode: SCNNode {
         super.init()
         
         do {
-            let loadedScene = try SCNScene(url: objectModelURL, options: nil)
+            let modelType = objectModelURL.absoluteString.hasSuffix(".obj") ? ModelType.kOBJ : ModelType.kGLTF
+            
+            var loadedScene:SCNScene
+            
+            if modelType == ModelType.kGLTF {
+                let sceneSource = GLTFSceneSource(url: objectModelURL)
+                loadedScene = try sceneSource.scene()
+            } else {
+                loadedScene = try SCNScene(url: objectModelURL, options: nil)
+            }
             
             let rootNode = loadedScene.rootNode
-            
             let childNodes = rootNode.childNodes
             
-            var modelInfoString = objectModelURL.deletingLastPathComponent().absoluteString
+            switch modelType {
+            case .kOBJ:
+                loadMaterialInfoFromJSON(nodesList: childNodes, objectURL: objectModelURL)
+                
+                break
+            case .kGLTF:
+                for childNode in childNodes {
+                    self.addChildNode(childNode)
+                }
+                break
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func loadMaterialInfoFromJSON(nodesList: [SCNNode], objectURL: URL) {
+        
+        do {
+            var modelInfoString = objectURL.deletingLastPathComponent().absoluteString
             modelInfoString = modelInfoString + "modelinfo.json"
             let jsonFile = URL(string: modelInfoString)
             
@@ -34,7 +65,7 @@ class ObjectModelNode: SCNNode {
             if let dictionary = jsonObject as? [String: Any] {
                 if let materialsDictionary = dictionary["materials"] as? [String: Any] {
                     
-                    for childNode in childNodes {
+                    for childNode in nodesList {
                         let materialsInNode = childNode.geometry?.materials
                         
                         for materialObject in materialsInNode! {
@@ -56,14 +87,14 @@ class ObjectModelNode: SCNNode {
                                 
                                 //Texture
                                 if (metalnessMap != ""){
-                                    var roughnessMapString = objectModelURL.deletingLastPathComponent().absoluteString
+                                    var roughnessMapString = objectURL.deletingLastPathComponent().absoluteString
                                     roughnessMapString = roughnessMapString + roughnessMap!
                                     let roughnessMapURL = URL(string: roughnessMapString)
-
+                                    
                                     let imageData = try Data(contentsOf: roughnessMapURL!)
                                     materialObject.roughness.contents = UIImage(data: imageData)
                                     
-                                    var metalnessMapString = objectModelURL.deletingLastPathComponent().absoluteString
+                                    var metalnessMapString = objectURL.deletingLastPathComponent().absoluteString
                                     metalnessMapString = metalnessMapString + metalnessMap!
                                     let metalnessMapURL = URL(string: metalnessMapString)
                                     
@@ -83,10 +114,6 @@ class ObjectModelNode: SCNNode {
         } catch {
             print(error)
         }
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
