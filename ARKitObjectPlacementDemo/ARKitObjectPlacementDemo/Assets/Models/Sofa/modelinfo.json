@@ -1,0 +1,28 @@
+{
+  "materials": {
+    "std_Leather": {
+      "metalnessValue": "0.35",
+      "roughnessValue": "0.51",
+      "metalnessMap": "",
+      "roughnessMap": ""
+    },
+    "std_Wood": {
+      "metalnessValue": "0.0",
+      "roughnessValue": "0.4375",
+      "metalnessMap": "",
+      "roughnessMap": ""
+    },
+    "std_Metal": {
+      "metalnessValue": "0.0",
+      "roughnessValue": "0.36",
+      "metalnessMap": "",
+      "roughnessMap": ""
+    },
+    "std_Leather_2": {
+      "metalnessValue": "0.35",
+      "roughnessValue": "0.51",
+      "metalnessMap": "",
+      "roughnessMap": ""
+    }
+  }
+}

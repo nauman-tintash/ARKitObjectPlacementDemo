@@ -1,0 +1,22 @@
+{
+  "materials": {
+    "std_02 - Default": {
+      "metalnessValue": "0.3",
+      "roughnessValue": "0.75",
+      "metalnessMap": "",
+      "roughnessMap": ""
+    },
+    "std_Chrome": {
+      "metalnessValue": "0.1",
+      "roughnessValue": "0.0199",
+      "metalnessMap": "",
+      "roughnessMap": ""
+    },
+    "std_Plast": {
+      "metalnessValue": "0.2",
+      "roughnessValue": "0.51",
+      "metalnessMap": "",
+      "roughnessMap": ""
+    }
+  }
+}
